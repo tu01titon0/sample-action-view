@@ -1,0 +1,8 @@
+
+Show
+<h1><%= @post.title %></h1>
+<h1><%= @post.content %></h1>
+
+
+<%= link_to 'Sua', edit_post_path %>
+<%= link_to 'Xoa', method: :delete, data: { confirm: 'Are you sure?' } %>

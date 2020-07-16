@@ -1,0 +1,16 @@
+<h1 class="main-title"> Post</h1>
+<div class="row range">
+  <% @posts.each do |post| %>
+    <div class="col-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= post.title %></h5>
+          <p class="card-text"><%= post.content %></p>
+        </div>
+      </div>
+    </div>
+    <td><%= link_to 'show', post_path(post) %></td>
+  <% end %>
+</div>
+
+<%= link_to 'Tao moi', new_post_path %>
