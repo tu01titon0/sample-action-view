@@ -1,8 +1,11 @@
+<div class="container">
+  <h1>Show </h1>
+  <p> Title: </p>
+  <p><%= @post.title %></p>
+  <p> Content: </p>
+  <p><%= @post.content %></p>
 
-Show
-<h1><%= @post.title %></h1>
-<h1><%= @post.content %></h1>
-
-
-<%= link_to 'Sua', edit_post_path %>
-<%= link_to 'Xoa', method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to 'Edit', edit_post_path %>
+  <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' }  %>
+  <%= link_to 'Back', posts_path %>
+</div>

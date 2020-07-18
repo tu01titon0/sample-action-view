@@ -1,20 +1,46 @@
-class PostsController < ActionController::Base
-  before_action :set_post, only: [:show, :update, :destroy]
+class PostsController < ApplicationController
+  before_action :set_post, only: [:show, :update, :destroy, :edit]
 
   def index 
     @posts = Post.all
   end
 
   def new
-    
+    @post = Post.new
   end
+
+  def create
+    @post = Post.new(post_params)
+
+    respond_to do |format|
+      if @post.save
+        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.json { render :show, status: :created, location: @post }
+      else
+        format.html { render :new }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
+    end    
+  end  
 
   def show
   end
   
   def edit
-  
-  end  
+  end
+
+  def update
+    respond_to do |format|
+      if @post.update(post_params)
+        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+        format.json { render :show, status: :ok, location: @pet }
+      else
+        format.html { render :edit }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def destroy
     @post.destroy
     respond_to do |format|
