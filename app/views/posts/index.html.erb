@@ -18,8 +18,8 @@
             <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
           </tr>
         <% end %>
-
     <tbody>    
   </table>
   <%= link_to 'Tao moi', new_post_path %>
+  <%= paginate @posts %>
 </div>

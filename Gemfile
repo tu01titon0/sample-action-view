@@ -31,6 +31,10 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bootstrap-sass' , '~> 3.3.7'
 
+gem 'kaminari'      
+# gem 'ransack'
+# gem 'bootstrap-kaminari-views'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
